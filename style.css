@@ -1,0 +1,36 @@
+:root {
+    --primary: #2c3e50;
+    --accent: #27ae60;
+    --danger: #e74c3c;
+    --light: #ecf0f1;
+}
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; margin: 0; }
+.container { max-width: 900px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+header { text-align: center; border-bottom: 2px solid var(--light); margin-bottom: 20px; }
+nav { display: flex; gap: 10px; justify-content: center; margin-bottom: 30px; }
+nav button { padding: 10px 15px; border: none; background: var(--primary); color: white; border-radius: 4px; cursor: pointer; transition: 0.3s; }
+nav button:hover { background: #34495e; }
+
+section { display: none; }
+section.active { display: block; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+th { background-color: var(--primary); color: white; }
+
+/* Seat Map Styling */
+.seat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0; }
+.seat { padding: 15px; border: 1px solid #ccc; text-align: center; cursor: pointer; border-radius: 4px; }
+.seat.available { background: #fff; }
+.seat.booked { background: var(--danger); color: white; cursor: not-allowed; }
+.seat.selected { background: var(--accent); color: white; }
+
+.booking-form { max-width: 500px; margin: 0 auto; }
+input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+.btn-confirm { width: 100%; padding: 15px; background: var(--accent); color: white; border: none; font-size: 1.1em; cursor: pointer; }
+
+.ticket-card { border: 2px solid var(--light); padding: 15px; margin-top: 10px; border-radius: 8px; }
+.cancelled { color: var(--danger); text-decoration: line-through; }
+.highlight { margin-top: 20px; font-weight: bold; font-size: 1.2em; color: var(--primary); }
