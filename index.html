@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚌 Bus Reservation & Cancellation</h1>
+            <p>Seat Release & Revenue Management</p>
+        </header>
+
+        <nav>
+            <button onclick="showSection('routes-section')">Display Routes</button>
+            <button onclick="showSection('booking-section')">Book Ticket</button>
+            <button onclick="showSection('manage-section')">Manage Tickets</button>
+            <button onclick="showSection('revenue-section'); updateRevenue();">Revenue Report</button>
+        </nav>
+
+        <section id="routes-section" class="active">
+            <h2>Available Bus Routes</h2>
+            <div id="routes-container"></div>
+        </section>
+
+        <section id="booking-section">
+            <h2>Book a Ticket</h2>
+            <div class="booking-form">
+                <select id="route-select" onchange="renderSeatMap()">
+                    <option value="">Select a Route</option>
+                </select>
+                <input type="text" id="passenger-name" placeholder="Passenger Name">
+                <div id="seat-map-container">
+                    <p>Select a route to view seats.</p>
+                </div>
+                <div id="booking-summary"></div>
+                <button class="btn-confirm" onclick="confirmBooking()">Confirm Booking</button>
+            </div>
+        </section>
+
+        <section id="manage-section">
+            <h2>Manage Tickets</h2>
+            <div class="search-bar">
+                <input type="text" id="search-id" placeholder="Enter Ticket ID (e.g. TKT1001)">
+                <button onclick="searchTicket()">Search</button>
+            </div>
+            <div id="ticket-display-area"></div>
+        </section>
+
+        <section id="revenue-section">
+            <h2>Revenue Report</h2>
+            <div id="revenue-table-container"></div>
+            <div id="popular-route" class="highlight"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
